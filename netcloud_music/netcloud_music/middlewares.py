@@ -6,6 +6,8 @@
 # https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
 from scrapy import signals
+from netcloud_music.netcloud_music.settings import USER_AGENT_LIST
+import random
 
 
 class NetcloudMusicSpiderMiddleware(object):
@@ -78,6 +80,11 @@ class NetcloudMusicDownloaderMiddleware(object):
         # - or return a Request object
         # - or raise IgnoreRequest: process_exception() methods of
         #   installed downloader middleware will be called
+
+        # 每次访问都随机 User-Agent
+        rand_use = random.choice(USER_AGENT_LIST)
+        if rand_use:
+            request.headers.setdefault('User-Agent', rand_use)
         return None
 
     def process_response(self, request, response, spider):

@@ -34,7 +34,8 @@ class KafkaPipeline(object):
     kafka_uri = "172.18.100.90:9092"
     kafka_topic = "crapy_data"
 
-    def __int__(self):
+    def __init__(self) -> None:
+        super().__init__()
         self.producer = KafkaProducer(
             bootstrap_servers=self.kafka_uri,
             value_serializer=lambda v: json.dumps(v).encode('utf-8'))
