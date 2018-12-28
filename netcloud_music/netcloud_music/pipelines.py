@@ -8,6 +8,7 @@ class MongoPipeline(object):
     collection_name = "shiwen"
 
     def __init__(self):
+        # todo 将配置项加到settings 文件中
         self.mongo_uri = '172.18.100.90'
         self.mongo_db = 'scrapy_data'
         self.client = pymongo.MongoClient(self.mongo_uri)
