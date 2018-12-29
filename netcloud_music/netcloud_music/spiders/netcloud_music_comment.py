@@ -9,7 +9,6 @@ class NetcloudMusicCommentSpider(scrapy.Spider):
     index = 1
 
     def parse(self, response):
-        print(response.css('div.ttt'))
         for song in response.css('div.ttt'):
             song_page = song.css('a::attr(href)').extract_first()
             print(self.index + '------' + song_page)
