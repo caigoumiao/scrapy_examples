@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for netcloud_music project
+# Scrapy settings for weixin_article project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,13 +9,13 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'netcloud_music'
+BOT_NAME = 'weixin_article'
 
-SPIDER_MODULES = ['netcloud_music.spiders']
-NEWSPIDER_MODULE = 'netcloud_music.spiders'
+SPIDER_MODULES = ['weixin_article.spiders']
+NEWSPIDER_MODULE = 'weixin_article.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-# USER_AGENT = 'netcloud_music (+http://www.yourdomain.com)'
+# USER_AGENT = 'weixin_article (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -38,27 +38,21 @@ ROBOTSTXT_OBEY = True
 # TELNETCONSOLE_ENABLED = False
 
 # Override the default request headers:
-DEFAULT_REQUEST_HEADERS = {
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-    'Accept-Encoding': 'gzip, deflate, br',
-    'Accept-Language': 'zh-CN,zh;q=0.9',
-    'Host': 'music.163.com',
-    'Upgrade-Insecure-Requests': 1,
-    'Referer': 'https://music.163.com/song?id=1334647784',
-    'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Avast/70.0.917.103'
-}
+# DEFAULT_REQUEST_HEADERS = {
+#   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+#   'Accept-Language': 'en',
+# }
 
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
-SPIDER_MIDDLEWARES = {
-    'netcloud_music.middlewares.NetcloudMusicSpiderMiddleware': 543,
-    'netcloud_music.middlewares.NetcloudMusicDownloaderMiddleware': 543
-}
+# SPIDER_MIDDLEWARES = {
+#    'weixin_article.middlewares.WeixinArticleSpiderMiddleware': 543,
+# }
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 # DOWNLOADER_MIDDLEWARES = {
-#    'netcloud_music.middlewares.NetcloudMusicDownloaderMiddleware': 543,
+#    'weixin_article.middlewares.WeixinArticleDownloaderMiddleware': 543,
 # }
 
 # Enable or disable extensions
@@ -70,8 +64,7 @@ SPIDER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 # ITEM_PIPELINES = {
-#     'netcloud_music.pipelines.MongoPipeline': 300,
-#     'netcloud_music.pipelines.KafkaPipeline': 400
+#    'weixin_article.pipelines.WeixinArticlePipeline': 300,
 # }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
